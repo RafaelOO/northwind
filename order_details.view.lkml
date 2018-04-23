@@ -28,6 +28,11 @@ view: order_details {
     sql: ${TABLE}.UnitPrice ;;
   }
 
+  measure: amount_per_each_order {
+    type: number
+    sql:  ${TABLE}.Quantity * ${TABLE}.UnitPrice ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [orders.ship_name, orders.order_id, products.product_name, products.product_id]

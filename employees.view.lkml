@@ -73,7 +73,7 @@ view: employees {
 
   dimension: full_name {
     type: string
-    sql: ${TABLE}.FirstName || ' ' || ${TABLE}.LastName ;;
+    sql: CONCAT(${TABLE}.FirstName,' ',${TABLE}.LastName);;
   }
 
   dimension: notes {

@@ -58,6 +58,17 @@ view: products {
     drill_fields: [detail*]
   }
 
+  measure: total_stock {
+    type: sum
+    sql: ${units_in_stock} ;;
+  }
+
+  measure: total_value_stock {
+    type: sum
+    sql: ${units_in_stock} * ${unit_price};;
+    value_format_name: usd
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [

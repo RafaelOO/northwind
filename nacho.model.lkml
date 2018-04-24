@@ -61,6 +61,30 @@ explore: order_details {
     sql_on: ${order_details.product_id} = ${products.product_id} ;;
     relationship: many_to_one
   }
+
+  join: employees {
+    type: left_outer
+    sql_on: ${orders.employee_id} = ${employees.employee_id} ;;
+    relationship: many_to_one
+  }
+
+  join: customers {
+    type: left_outer
+    sql_on: ${orders.customer_id} = ${customers.customer_id} ;;
+    relationship: many_to_one
+  }
+
+  join: suppliers {
+    type: left_outer
+    sql_on: ${products.supplier_id} = ${suppliers.supplier_id} ;;
+    relationship: many_to_one
+  }
+
+  join: categories {
+    type: left_outer
+    sql_on: ${products.category_id} = ${categories.category_id} ;;
+    relationship: many_to_one
+  }
 }
 
 explore: orders {
